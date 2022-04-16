@@ -7,7 +7,10 @@ import EventForm from './EventForm'
 import EventTable from './EventTable'
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, [])
+  const initialState = {
+    eventTable: [],
+  }
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
