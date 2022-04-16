@@ -5,6 +5,7 @@ import AppContext from '../contexts/AppContext'
 
 import EventForm from './EventForm'
 import EventTable from './EventTable'
+import OperationLogs from './OperationLogsTable'
 
 const App = () => {
   const initialState = {
@@ -19,6 +20,7 @@ const App = () => {
         This is a templete for React app.
         <EventForm />
         <EventTable />
+        <OperationLogs />
       </div>
     </AppContext.Provider>
   )
