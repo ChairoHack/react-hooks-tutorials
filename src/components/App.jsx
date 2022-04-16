@@ -21,6 +21,21 @@ const App = () => {
     setBody('')
   }
 
+  const deleteAllEvents = (e) => {
+    e.preventDefault()
+
+    const result = window.confirm(
+      '全てのイベントを本当に削除しても良いですか？'
+    )
+    if (result) {
+      dispatch({
+        type: 'DELETE_ALL_EVENTS',
+      })
+    }
+  }
+
+  const unCreatable = title === '' || body === ''
+
   return (
     <div className="container">
       This is a templete for React app.
@@ -47,10 +62,18 @@ const App = () => {
             />
           </div>
 
-          <button className="btn btn-primary mr-2" onClick={addEvent}>
+          <button
+            className="btn btn-primary mr-2"
+            onClick={addEvent}
+            disabled={unCreatable}
+          >
             イベントを作成する
           </button>
-          <button className="btn btn-danger mr-2">
+          <button
+            className="btn btn-danger mr-2"
+            onClick={deleteAllEvents}
+            disabled={state.length === 0}
+          >
             全てのイベントを削除する
           </button>
         </form>
