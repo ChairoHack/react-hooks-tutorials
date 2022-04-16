@@ -9,6 +9,7 @@ import EventTable from './EventTable'
 const App = () => {
   const initialState = {
     eventTable: [],
+    operationLogs: [],
   }
   const [state, dispatch] = useReducer(reducer, initialState)
 
