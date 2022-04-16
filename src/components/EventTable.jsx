@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Event from './Event'
+import AppContext from '../contexts/AppContext'
+import App from './App'
 
 const EventTable = (props) => {
   const { state, dispatch } = props
+  const value = useContext(AppContext)
   return (
     <div className="mb-3">
       <h4>イベント一覧</h4>
