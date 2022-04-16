@@ -6,17 +6,15 @@ import AppContext from '../contexts/AppContext'
 import EventForm from './EventForm'
 import EventTable from './EventTable'
 
-console.log(AppContext)
-
 const App = () => {
   const [state, dispatch] = useReducer(reducer, [])
 
   return (
-    <AppContext.Provider value={'Hello, I am provider.'}>
+    <AppContext.Provider value={{ state, dispatch }}>
       <div className="container">
         This is a templete for React app.
-        <EventForm state={state} dispatch={dispatch} />
-        <EventTable state={state} dispatch={dispatch} />
+        <EventForm />
+        <EventTable />
       </div>
     </AppContext.Provider>
   )

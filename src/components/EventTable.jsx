@@ -3,8 +3,8 @@ import Event from './Event'
 import AppContext from '../contexts/AppContext'
 import App from './App'
 
-const EventTable = (props) => {
-  const { state, dispatch } = props
+const EventTable = () => {
+  const { state } = useContext(AppContext)
   const value = useContext(AppContext)
   return (
     <div className="mb-3">
@@ -20,7 +20,7 @@ const EventTable = (props) => {
         </thead>
         <tbody>
           {state.map((event, index) => (
-            <Event key={index} dispatch={dispatch} event={event} />
+            <Event key={index} event={event} />
           ))}
         </tbody>
       </table>
